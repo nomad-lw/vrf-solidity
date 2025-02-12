@@ -57,6 +57,12 @@ Additionally, the library provides some auxiliary `pure` functions to facilitate
   - _Output_:
     - The VRF hash ouput as shas256 digest
 
+## Potential Improvements
+
+- Refactor library to catch it up to RFC9381 spec (Witnet implementation is upto draft 04, 2019)
+- Performance improvements?
+- Additional asymmetric cryptography support - RSA
+
 ## Elliptic Curve VRF (using `Secp256k1`)
 
 This library follows the algorithms described in [VRF-draft-04](https://tools.ietf.org/pdf/draft-irtf-cfrg-vrf-04) in order to provide the VRF verification capability.

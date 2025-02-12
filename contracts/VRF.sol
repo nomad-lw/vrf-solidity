@@ -452,6 +452,8 @@ library VRF {
   function pointToAddress(uint256 _x, uint256 _y)
       internal pure returns(address)
   {
-    return address(uint256(keccak256(abi.encodePacked(_x, _y))) & 0x00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF);
+    return address(uint160(uint256(keccak256(abi.encodePacked(_x, _y))) & 0x00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF));
+    // uint256 hash = uint256(keccak256(abi.encodePacked(_x, _y))) & 0x00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+    // return address(uint160(hash)); // Convert to uint160 first before casting to address
   }
 }
